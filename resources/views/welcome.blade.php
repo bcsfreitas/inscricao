@@ -14,11 +14,6 @@
                 @endif
 
                 <div class="content">
-                    <div class="title m-b-md">
-                    @foreach($pilotos as $p)
-                        <p>{{$p}}</p>
-                    @endforeach
-                    </div>
                         
 
                     <div class="links">
