@@ -18,6 +18,8 @@ class PilotosController extends Controller
 		return view('pilotos.index')->with('pilotos', $pilotos);
 	}
 
+
+
 	public function deletar(Request $request) {
 		$id = $request->input('id');
 		Piloto::destroy($id);
@@ -26,10 +28,29 @@ class PilotosController extends Controller
 
 	}
 
+
+
 	public function visualizar($id) {
 		$piloto = Piloto::find($id);
 
 		return view('piloto')->with('piloto', $piloto);
+	}
+
+
+
+	public function salvar(Request $request) {
+      $parametros = $request->except('_token');
+      $produtos = Piloto::create($parametros);
+
+      return redirect('/pilotos')->with('msg', 'Piloto criado com sucesso');
+	}
+
+
+
+	public function editar($id){
+		$piloto = Piloto::find('$id');
+
+		return view('pilotos/form')->with('piloto', $piloto);
 	}
 
 

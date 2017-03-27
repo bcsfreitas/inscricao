@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePilotosTable extends Migration
+class CreateOrganizersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,27 +13,20 @@ class CreatePilotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('pilotos', function (Blueprint $table) {
+        Schema::create('organizers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('userid');
             $table->string('nome');
-            $table->string('cpf');
-            $table->string('equipe');
-            $table->string('patrocinador');
-            $table->integer('telefone');
-            $table->string('nomeapoio');
-            $table->integer('telapoio');
-            $table->string('moto');
-            $table->string('filiacao');
-            $table->date('datanasc');
-
+            $table->boolean('cpf');
+            $table->string('identificacao');
+            $table->string('email');
+            $table->string('telefone');
             $table->string('cep');
             $table->string('logradouro');
             $table->integer('numero');
             $table->string('complemento');
             $table->string('bairro');
             $table->string('cidade');
-            $table->string('estado');
+            $table->char('estado');
             $table->timestamps();
         });
     }
@@ -45,6 +38,6 @@ class CreatePilotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pilotos');
+        Schema::dropIfExists('organizers');
     }
 }

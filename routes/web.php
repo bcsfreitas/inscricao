@@ -14,14 +14,17 @@
 Route::get('/', function() {
 	return view('welcome');
 });
+// Piloto
 Route::get('/pilotos', 'PilotosController@index');
+Route::get('/pilotos/cadastro', function() {
+	return view('pilotos/form');
+});
 Route::post('/pilotos', 'PilotosController@salvar');
 Route::put('/pilotos', 'PilotosController@alterar');
 Route::delete('/pilotos', 'PilotosController@deletar');
 
-Route::get('/piloto/cadastro', 'PilotosController@form');
 Route::get('/piloto/{id}', 'PilotosController@visualizar');
-
+Route::get('/piloto/{id}/editar', 'PilotosController@editar');
 
 
 Route::get('/categorias', 'CategoriasController@index');
