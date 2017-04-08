@@ -15,17 +15,17 @@ class CreatePilotosTable extends Migration
     {
         Schema::create('pilotos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('userid');
-            $table->string('nome');
-            $table->string('cpf');
-            $table->string('equipe');
-            $table->string('patrocinador');
-            $table->integer('telefone');
-            $table->string('nomeapoio');
-            $table->integer('telapoio');
-            $table->string('moto');
-            $table->string('filiacao');
-            $table->date('datanasc');
+            $table->integer('userid')->nullable();
+            $table->string('nome')->nullable();
+            $table->string('cpf')->nullable();
+            $table->string('equipe')->nullable();
+            $table->string('patrocinador')->nullable();
+            $table->integer('telefone')->nullable();
+            $table->string('nomeapoio')->nullable();
+            $table->integer('telapoio')->nullable();
+            $table->string('moto')->nullable();
+            $table->string('filiacao')->nullable();
+            $table->date('datanasc')->nullable();
 
             $table->string('cep');
             $table->string('logradouro');

@@ -15,7 +15,13 @@ class CreateEventosTable extends Migration
     {
         Schema::create('eventos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('nome')->nullable();
+            $table->date('data')->nullable();
+            $table->date('data-pagamento')->nullable();
+            $table->string('local')->nullable();
+            $table->string('valor')->nullable();
+            $table->longText('descricao')->nullable();
+            $table->longText('largada')->nullable();
             $table->timestamps();
         });
     }
