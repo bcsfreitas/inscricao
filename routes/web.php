@@ -1,8 +1,9 @@
 <?php
 // Home
 Route::get('/', function() {
-	return view('welcome');
+	return view('index');
 });
+Route::get('home', 'OrganizadoresController@visualizar');
 
 // Cadastro
 Route::get('/cadastro', function() {
@@ -17,9 +18,7 @@ Route::get('/cadastro/organizador', function() {
 
 // Organizador
 Route::get('/organizadores', 'OrganizadoresController@index');
-Route::get('/organizador/{id}', function() {
-	return 
-});
+Route::get('/organizador/{id}', 'OrganizadoresController@visualizar');
 Route::post('/cadastrar/organizador', 'OrganizadoresController@salvar');
 
 // Piloto
@@ -38,6 +37,7 @@ Route::get('/categorias', 'CategoriasController@index');
 
 // Evento
 Route::get('/eventos', 'EventosController@index');
+Route::get('/eventos/{id}', 'EventosController@visualizar');
 
 // Route::get('/pilotos', 'PilotosController@listarPilotos');
 

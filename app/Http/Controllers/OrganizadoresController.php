@@ -1,9 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Organizador;
+use App\Evento;
 
 class OrganizadoresController extends Controller
 {
@@ -31,8 +33,12 @@ class OrganizadoresController extends Controller
     	return redirect('/organizadores')->with('msg', 'Organizador criado com sucesso');
 	}
 
-	public function visualizar($id) {
-		$organizador = Organizador::find($id);
-		return $organizador;
+	public function visualizar() {
+		$user = Auth::user();
+		$id = Auth::user()->id;
+		$eventos = Evento::where('id', $id)->orderBy('created_at', 'desc')->get();
+		return view('organizadores.lista')->with([
+			'eventos' => $eventos
+			]);
 	}
 }

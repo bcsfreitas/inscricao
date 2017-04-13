@@ -15,7 +15,6 @@ class CreatePilotosTable extends Migration
     {
         Schema::create('pilotos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('userid')->nullable();
             $table->string('nome')->nullable();
             $table->string('cpf')->nullable();
             $table->string('equipe')->nullable();
@@ -27,13 +26,13 @@ class CreatePilotosTable extends Migration
             $table->string('filiacao')->nullable();
             $table->date('datanasc')->nullable();
 
-            $table->string('cep');
-            $table->string('logradouro');
-            $table->integer('numero');
-            $table->string('complemento');
-            $table->string('bairro');
-            $table->string('cidade');
-            $table->string('estado');
+            $table->string('cep')->nullable();
+            $table->string('logradouro')->nullable();
+            $table->integer('numero')->nullable();
+            $table->string('complemento')->nullable();
+            $table->string('bairro')->nullable();
+            $table->string('cidade')->nullable();
+            $table->string('estado')->nullable();
             $table->timestamps();
         });
     }

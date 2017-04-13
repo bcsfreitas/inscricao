@@ -20,7 +20,7 @@ class PilotosController extends Controller
 
 	public function visualizar($id) {
 		$piloto = Piloto::find($id);
-		return view('piloto')->with('piloto', $piloto);
+		return view('piloto')->with(compact($piloto));
 	}
 
 	public function salvar(Request $request) {

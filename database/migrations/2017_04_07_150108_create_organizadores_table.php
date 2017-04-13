@@ -25,7 +25,7 @@ class CreateOrganizadoresTable extends Migration
             $table->string('complemento')->nullable();
             $table->string('bairro')->nullable();
             $table->string('cidade')->nullable();
-            $table->char('estado');
+            $table->char('estado')->nullable();
             $table->timestamps();
         });
     }
