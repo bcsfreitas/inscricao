@@ -23,12 +23,12 @@ Route::post('/cadastrar/organizador', 'OrganizadoresController@salvar');
 
 // Piloto
 Route::get('/pilotos', 'PilotosController@index');
-Route::get('/piloto/{id}', 'PilotosController@visualizar');
+Route::get('/pilotos/{piloto}', 'PilotosController@visualizar');
 Route::get('/pilotos/cadastro', function() {
 	return view('pilotos/form');
 });
 Route::post('/pilotos', 'PilotosController@salvar');
-Route::get('/piloto/{id}/editar', 'PilotosController@editar');
+Route::get('/pilotos/{piloto}/editar', 'PilotosController@editar');
 Route::put('/pilotos', 'PilotosController@alterar');
 Route::delete('/pilotos', 'PilotosController@deletar');
 

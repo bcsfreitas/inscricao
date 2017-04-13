@@ -23,7 +23,7 @@
 							<td>{{$piloto->cpf}}</td>
 							<td>{{$piloto->nome}}</td>
 							<td>
-								<a class="btn btn-warning" href="/piloto/{{$piloto->id}}">></a>
+								<a class="btn btn-warning" href="/pilotos/{{$piloto->id}}">>></a>
 								<!-- <form style="display: inline-block" class="" action="/pilotos" method="post">
 						          <input type="hidden" name="_method" value="delete" />
 						          {{csrf_field()}}
@@ -37,13 +37,6 @@
 					</tbody>
 				</table>
 			</div>
-			<footer class="panel-footer">
-				<div class="row">
-					<div class="col-sm-4 hidden-xs">               
-					</div>
-				</div>
-			</footer>
-
 	</div>
 </div>
 

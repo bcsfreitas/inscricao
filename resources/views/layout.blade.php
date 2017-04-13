@@ -14,6 +14,7 @@
 		@yield('content')
 
 	</div>
+	{{-- @include('layouts.footer')--}}
 	@yield('script')
 </body>
 </html>

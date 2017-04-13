@@ -18,9 +18,8 @@ class PilotosController extends Controller
 		return redirect('pilotos')->with('msg', 'Piloto deletado com sucesso');
 	}
 
-	public function visualizar($id) {
-		$piloto = Piloto::find($id);
-		return view('piloto')->with(compact($piloto));
+	public function visualizar(Piloto $piloto) {
+		return $piloto;
 	}
 
 	public function salvar(Request $request) {
@@ -29,8 +28,7 @@ class PilotosController extends Controller
       return redirect('/pilotos')->with('msg', 'Piloto criado com sucesso');
 	}
 
-	public function editar($id){
-		$piloto = Piloto::find('$id');
+	public function editar(Piloto $piloto){
 		return view('pilotos/form')->with('piloto', $piloto);
 	}
 
